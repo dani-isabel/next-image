@@ -1,65 +1,69 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Next image</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://nextjs.org/docs/api-reference/next/image#layout">Next image feature!</a>
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <h2 className={styles.title}>layout fill</h2>
+      <div className={styles.container}>
+        <Image
+            src="https://cdn.pixabay.com/photo/2018/01/17/20/22/analytics-3088958_1280.jpg"
+            alt="Picture of the author"
+            layout="fill"
+        />
+      </div>
+      <div className={styles.grid}>
+      <div className={styles.card}>
+        <p>Normal image (width and height) </p>
+      <Image
+            src="https://cdn.pixabay.com/photo/2017/09/14/16/38/fiber-optic-2749588_1280.jpg"
+            alt="Picture of the author"
+            width={500}
+            height={500}
+      />
+      </div>
+      <div className={styles.card}>
+        <p>Layout intrinsic </p>
+      <Image
+            src="https://cdn.pixabay.com/photo/2016/07/03/18/04/tech-1495181_1280.jpg"
+            alt="Picture of the author"
+            width={500}
+            height={500}
+            layout="intrinsic"
+      />
+      </div>
+      <div className={styles.card}>
+        <p>Layout fixed (not change as the viewport changes) </p>
+      <Image
+            src="https://cdn.pixabay.com/photo/2013/11/20/09/35/background-213649_1280.jpg"
+            alt="Picture of the author"
+            width={500}
+            height={500}
+            layout="fixed"
+      />
+      </div>
+      <div className={styles.card}>
+        <p>Layout fixed (not change as the viewport changes) </p>
+      <Image
+            src="https://cdn.pixabay.com/photo/2018/06/09/15/49/technology-3464633_1280.jpg"
+            alt="Picture of the author"
+            width={500}
+            height={500}
+            layout="responsive"
+      />
+      </div>
+      
+      </div>
     </div>
   )
 }
